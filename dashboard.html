@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white p-8">
+  <h1 class="text-3xl font-bold mb-4">Dashboard</h1>
+  <p>Welcome! You are logged in.</p>
+  <button id="logout" class="mt-4 bg-red-500 hover:bg-red-600 p-2 rounded">Logout</button>
+
+  <script>
+    // Simple auth check
+    if (!localStorage.getItem("token")) {
+      window.location.href = "index.html";
+    }
+
+    document.getElementById("logout").addEventListener("click", () => {
+      localStorage.removeItem("token");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
